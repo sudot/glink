@@ -2,6 +2,7 @@ package main
 
 import (
 	"Baiyuetribe/glink/service"
+	"fmt"
 	"log"
 
 	"github.com/gofiber/fiber/v2/middleware/compress"
@@ -24,7 +25,6 @@ func main() {
 	// 	Root: packr.New("Assets Box", "/web"),
 	// }))
 	app.Get("api/*", service.ApiHandler) // 请求地址 http://127.0.0.1:3000/api/http://demo.com
-	log.Fatal(app.Listen(":3006"))
-	// fmt.Println("应用访问地址：http://127.0.0.1:3006")
-	// log.Fatal(app.Listen("127.0.0.1:3006"))
+	fmt.Println("应用访问端口：8080")
+	log.Fatal(app.Listen(":8080"))
 }
